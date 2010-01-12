@@ -1,6 +1,9 @@
 Usage:
-1.add one line code to your spring configuration
-<bean class="com.google.code.springraph.Inspector" p:target="file:///dot/spring.dot" p:excludePatterns="org.springframework.*"/>
+1.register a bean to your spring
+<bean class="com.google.code.springraph.Inspector">
+<property name="target" value="file:///dot/spring.dot"/>
+<property name="excludePatterns" value="org.springframework.*"/>
+</bean>
 when your spring container started,it will generate a dot file 
 2.install graphviz for converting dot file to png image, http://www.graphviz.org/Download..php
 dot -Grankdir=LR -Tpng spring.dot -o spring.png
